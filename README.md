@@ -63,3 +63,24 @@ Ordered from slow to fast growing.
 * n!
 
 These functions are used to specify a upper bound using g(n).
+
+#### Finding Big O
+
+* Keep the fastest growing term and discard the lower terms and constants.
+* Ignore coefficients.
+* Base of logarithm is not important.
+
+#### Worst, Average and Best Case Analysis
+
+* Worst Case
+    * Maximum runinng time that an algorithm will take for input size.
+    * Consider an input for which the algorithm takes the longest time.
+    * Informative and is easily done.
+* Best Case
+    * Minimum running time that an algoritm will take for input size.
+    * Consider an input for which the algorithm takes the shortest time.
+    * Not very informative.
+* Average Case
+    * Average running time that an algoritm will take for input size.
+    * Consider all possible inputs and compute an average.
+    * Generally very difficult.
