@@ -1,5 +1,26 @@
 # Data Structures and Algorithms
 
+## Data Structures
+
+### Linked Lists
+
+* Dynamic data structure made up of nodes.
+* Data is not stored in contiguous memory locations.
+* Insertion and deletion of elements is easier.
+* Can be used to implement abstract data types list, stakc and queue.
+* Efficient random access is not possible.
+* Implementation requires extra memory.
+
+**Single Linked List**
+
+A single linked list contains two parts:
+
+* Info
+* Link
+
+`Info` is the data and `Link` is a reference to the next node.
+
+
 ## Algorithms
 
 An algorithm is an unambiguous specification of how to solve a class of problems.
@@ -9,9 +30,9 @@ An algorithm is an unambiguous specification of how to solve a class of problems
 * Experimental / Empirical Method
 * Analytical Method (Asymptotic analysis)
 
-### Big O  Notation
+## Big O  Notation
 
-#### Definition
+### Definition
 
 `f(n) is O(g(n))` if there exist constants `c` and `n0` such that
 
@@ -48,7 +69,7 @@ n0 = 6
 3n ^ 2 + 4n + 7 is O(n ^ 2)
 
 ``` 
-#### Common Asymptotic Functions
+### Common Asymptotic Functions
 
 Ordered from slow to fast growing.
 
@@ -64,13 +85,13 @@ Ordered from slow to fast growing.
 
 These functions are used to specify a upper bound using g(n).
 
-#### Finding Big O
+### Finding Big O
 
 * Keep the fastest growing term and discard the lower terms and constants.
 * Ignore coefficients.
 * Base of logarithm is not important.
 
-#### Worst, Average and Best Case Analysis
+### Worst, Average and Best Case Analysis
 
 * Worst Case
     * Maximum runinng time that an algorithm will take for input size.
@@ -84,3 +105,14 @@ These functions are used to specify a upper bound using g(n).
     * Average running time that an algoritm will take for input size.
     * Consider all possible inputs and compute an average.
     * Generally very difficult.
+
+### Common Complexities
+
+* O(1) -> Constant
+* O(log n) -> Logarithmic
+* O(n) -> Linear
+* O(n log n) -> Linear logarithmic
+* O(n ^ 2) -> Quadratic
+* O(n ^ 3) -> Cubic
+* O(n ^ k) -> Polynomial
+* O(a ^ n) -> Exponential
