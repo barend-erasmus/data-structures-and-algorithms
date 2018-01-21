@@ -1,10 +1,10 @@
-import * as readline from 'readline';
 import * as childProcess from 'child_process';
+import * as readline from 'readline';
 
 function ask(readlineInterface: any, str: string): Promise<string> {
     return new Promise((resolve, reject) => {
         readlineInterface.question(str, (answer: string) => {
-            resolve(answer)
+            resolve(answer);
         });
     });
 }
@@ -12,7 +12,7 @@ function ask(readlineInterface: any, str: string): Promise<string> {
 async function run() {
     const readlineInterface = readline.createInterface({
         input: process.stdin,
-        output: process.stdout
+        output: process.stdout,
     });
 
     const programs: {} = {
@@ -21,7 +21,7 @@ async function run() {
 
     const programIndexStr: string = await ask(readlineInterface, `Select a program: \r\n\r\n${Object.keys(programs).map((key, i) => `(${i + 1}) - ${programs[key]}`).join('\r\n')}\r\n`);
 
-    const programKey: string = Object.keys(programs)[parseInt(programIndexStr) - 1];
+    const programKey: string = Object.keys(programs)[parseInt(programIndexStr, undefined) - 1];
 
     console.log(`\r\n`);
 

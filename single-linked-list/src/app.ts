@@ -1,5 +1,5 @@
-import { SingleLinkedList } from "./single-linked-list";
-import { Node } from "./node";
+import { Node } from './node';
+import { SingleLinkedList } from './single-linked-list';
 
 const singleLinkedList: SingleLinkedList<number> = new SingleLinkedList<number>();
 
