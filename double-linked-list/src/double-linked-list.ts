@@ -45,7 +45,7 @@ export class DoubleLinkedList<T> {
         current.nextlink = null;
         current.previouslink = next;
 
-        while(next != null) {
+        while (next != null) {
             next.previouslink = next.nextlink;
             next.nextlink = current;
             current = next;
