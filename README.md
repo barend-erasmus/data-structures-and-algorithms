@@ -20,6 +20,23 @@ A single linked list contains two parts:
 
 `Info` is the data and `Link` is a reference to the next node.
 
+**Double Linked List**
+
+A double linked list contains three parts:
+
+* Info
+* Link to previous node.
+* Link to next node.
+
+Advantages over single linked list:
+
+* Can be travesed in bith foward and backward directions.
+* Implementation of some operations is easier; insertion, deletion can be done with single reference.
+
+Disadvantages over a single linked list:
+
+* Extra space is required for storing previous link.
+* While inserting and deleting, some extra steps are required for maintaining the previous link.
 
 ## Algorithms
 

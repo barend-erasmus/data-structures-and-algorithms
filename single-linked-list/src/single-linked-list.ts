@@ -21,6 +21,64 @@ export class SingleLinkedList<T> {
         return count;
     }
 
+    public deleteAtBeginning(): void {
+        if (!this.start) {
+            return;
+        }
+
+        this.start = this.start.link;
+    }
+
+    public deleteAtEnd(): void {
+
+        if (!this.start) {
+            return;
+        }
+
+        if (!this.start.link) {
+            this.start = null;
+        }
+
+        let current: Node<T> = this.start;
+
+        while (current.link.link != null) {
+            current = current.link;
+        }
+
+        current.link = null;
+    }
+
+    public deleteAtIndex(index: number): void {
+        let current: Node<T> = this.start;
+
+        for (let i = 0; i < index - 1 && current != null; i++) {
+            current = current.link;
+        }
+
+        current.link = current.link.link;
+    }
+
+    public findCycleUsingHareAndTortoise(): boolean {
+
+        if (this.start === null || this.start.link === null) {
+            return false;
+        }
+
+        let slow: Node<T> = this.start;
+        let fast: Node<T> = this.start;
+
+        while (fast !== null && fast.link != null) {
+            slow = slow.link;
+            fast = fast.link.link;
+
+            if (slow === fast) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     public insertAfterIndex(node: Node<T>, index: number): void {
         let current: Node<T> = this.start;
 
@@ -97,6 +155,69 @@ export class SingleLinkedList<T> {
         }
 
         return null;
+    }
+
+    public reverse(): void {
+        let previous: Node<T> = null;
+        let current: Node<T> = null;
+        let next: Node<T> = null;
+
+        while (current !== null) {
+            next = current.link;
+            current.link = previous;
+            previous = current;
+            current = next;
+        }
+
+        this.start = previous;
+    }
+
+    public sortUsingBubbleSortByExchangingData(): void {
+        let current: Node<T> = null;
+        let next: Node<T> = null;
+        let end: Node<T> = null;
+
+        for (end = null; end != this.start.link; end = current) {
+            for (current = this.start; current.link != end; current = current.link) {
+                next = current.link;
+                if (current.info > next.info) {
+                    const info: T = current.info;
+
+                    current.info = next.info;
+                    next.info = info;
+                }
+            }
+        }
+    }
+
+    public sortUsingBubbleSortByExchangingLinks(): void {
+        let previous: Node<T> = null;
+        let current: Node<T> = null;
+        let next: Node<T> = null;
+        let end: Node<T> = null;
+
+        let temp: Node<T> = null;
+
+        for (end = null; end != this.start.link; end = current) {
+            for (previous = current = this.start; current.link != end; previous = current, current = current.link) {
+                next = current.link;
+
+                if (current.info > next.info) {
+                    current.link = next.link;
+                    next.link = current;
+
+                    if (current != this.start) {
+                        previous.link = next;
+                    } else {
+                        this.start = next;
+                    }
+
+                    temp = current;
+                    current = next;
+                    next = temp;
+                }
+            }
+        }
     }
 
     public traverse(fn: (node: Node<T>) => void): void {
