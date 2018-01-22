@@ -18,6 +18,7 @@ async function run() {
     const programs: {} = {
         'checking-validity-of-an-expression-containing-nested-parentheses': 'Checking validity of an expression containing nested parentheses',
         'double-linked-list': 'Double Linked List',
+        'factorial': 'Factorial',
         'single-linked-list': 'Single Linked List',
     };
 

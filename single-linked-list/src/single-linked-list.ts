@@ -177,8 +177,8 @@ export class SingleLinkedList<T> {
         let next: Node<T> = null;
         let end: Node<T> = null;
 
-        for (end = null; end != this.start.link; end = current) {
-            for (current = this.start; current.link != end; current = current.link) {
+        for (end = null; end !== this.start.link; end = current) {
+            for (current = this.start; current.link !== end; current = current.link) {
                 next = current.link;
                 if (current.info > next.info) {
                     const info: T = current.info;
@@ -198,15 +198,15 @@ export class SingleLinkedList<T> {
 
         let temp: Node<T> = null;
 
-        for (end = null; end != this.start.link; end = current) {
-            for (previous = current = this.start; current.link != end; previous = current, current = current.link) {
+        for (end = null; end !== this.start.link; end = current) {
+            for (previous = current = this.start; current.link !== end; previous = current, current = current.link) {
                 next = current.link;
 
                 if (current.info > next.info) {
                     current.link = next.link;
                     next.link = current;
 
-                    if (current != this.start) {
+                    if (current !== this.start) {
                         previous.link = next;
                     } else {
                         this.start = next;
