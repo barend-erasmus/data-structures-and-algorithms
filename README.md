@@ -38,6 +38,12 @@ Disadvantages over a single linked list:
 * Extra space is required for storing previous link.
 * While inserting and deleting, some extra steps are required for maintaining the previous link.
 
+**Circular Linked List**
+
+Uses:
+
+* Implementation of a queue.
+
 ## Algorithms
 
 An algorithm is an unambiguous specification of how to solve a class of problems.

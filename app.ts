@@ -16,6 +16,7 @@ async function run() {
     });
 
     const programs: {} = {
+        'double-linked-list': 'Double Linked List',
         'single-linked-list': 'Single Linked List',
     };
 

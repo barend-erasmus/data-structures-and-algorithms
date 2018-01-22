@@ -39,7 +39,20 @@ export class DoubleLinkedList<T> {
     }
 
     public reverse(): void {
+        let current: Node<T> = this.start;
+        let next: Node<T> = current.nextlink;
 
+        current.nextlink = null;
+        current.previouslink = next;
+
+        while(next != null) {
+            next.previouslink = next.nextlink;
+            next.nextlink = current;
+            current = next;
+            next = next.previouslink;
+        }
+
+        this.start = current;
     }
 
     public traverse(fn: (node: Node<T>) => void): void {
