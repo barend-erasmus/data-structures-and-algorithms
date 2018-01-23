@@ -81,10 +81,6 @@ Binary tree can be represented in two ways.
 * Sequential Representation
 * Linked Representation
 
-**Binary Search Trees**
-
-Coming Soon...
-
 ## Algorithms
 
 An algorithm is an unambiguous specification of how to solve a class of problems.
