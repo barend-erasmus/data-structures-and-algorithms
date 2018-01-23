@@ -44,6 +44,22 @@ Uses:
 
 * Implementation of a queue.
 
+**Trees**
+
+* Non linear data structures.
+* A tree sturcture represents hierarchical relationship among its elements.
+
+A `node` is a element of a tree.
+A `edge` is line connection the nodes.
+A `parent node` is the immediate predecessor of a node.
+A `child node` is the immediate successor of a node.
+A `root node` designated node that does not have any parent.
+A `leaf node` is a node that does not have any child.
+The `level` is the distance of that node form the root.
+The `height` is the total number of levels in a tree.
+`Siblings` are two or more nodes which has the same parent.
+The `degree` is the number of subtrees or children of a node.
+
 ## Algorithms
 
 An algorithm is an unambiguous specification of how to solve a class of problems.
@@ -139,3 +155,99 @@ These functions are used to specify a upper bound using g(n).
 * O(n ^ 3) -> Cubic
 * O(n ^ k) -> Polynomial
 * O(a ^ n) -> Exponential
+
+## Recursion
+
+### Tail Recursive Call
+
+A tail recursive call is a recursive call executed as the last statement.
+
+Example of tail recursive call:
+
+```javascript
+function print(n: number) {
+    if (n == 0) {
+        return;
+    }
+
+    console.log(n);
+    print(n - 1); // Tail recursive call
+}
+```
+
+Example of a non tail recursive call:
+
+```javascript
+function print(n: number) {
+    if (n == 0) {
+        return;
+    }
+
+    print(n - 1); // Not a tail recursive call
+    console.log(n);
+}
+```
+
+In methods that return a value, a tail recursive call is a recursive calls that appears in the return statement but is not part of an expression.
+
+Example of tail recursive call:
+
+```javascript
+function gcd(a: number, b: number): number {
+    if (b == 0) {
+        return a;
+    }
+
+   return gcd(b, a % b); // Tail recursive call
+}
+```
+
+Example of a non tail recursive call:
+
+```javascript
+function factorial(n: number): number {
+    if (n === 0) {
+        return 1;
+    }
+
+    return n * factorial(n - 1); // Not a tail recursive call
+}
+```
+
+### Tail Recursive Method
+
+A tail recursive method is a method where all recursive calls are tail recursive calls.
+
+Example of tail recursive method:
+
+```javascript
+function binarySearch(arr: number[], item: number, low: number, high: number): number {
+    let mid: number = 0;
+
+    if (high < low) {
+        return -1;
+    }
+
+    mid = (low + high) / 2;
+
+    if (item > arr[mid]) {
+        return binarySearch(arr, item, mid + 1, high); // Tail recursive call
+    } else if (item < arr[mid]) {
+        return binarySearch(arr, item, low, mid - 1); // Tail recursive call
+    } else {
+        return mid;
+    }
+}
+```
+
+In a tail recursive method, there is nothing to be done in the unwinding phase.
+
+### Iteration vs. Recursion
+
+| Iteration | Recursion |
+| --------- | --------- |
+| Repetition occurs when the block of code finishes or a continue statement is encountered. | Repetition occurs when the function calls itself. |
+| Variables inside the loop are modified using update statement. | New values ae passed as parameters to the next recursive call. |
+| There is a terminating condition and the loop proceeds in such a way that this condition becomes false at some point. | Recursive functions proceeds in such a way that we finally reach the base case. |
+| No such time or memory overhead. | Pushing and poppoing activation records. |
+| Iterative algorithms are harder to implement. | Simplify the code and make it compact. |
