@@ -60,6 +60,31 @@ The `height` is the total number of levels in a tree.
 `Siblings` are two or more nodes which has the same parent.
 The `degree` is the number of subtrees or children of a node.
 
+**Binary Trees**
+
+A binary tree is a finite set of nodes that is:
+
+* either empty or
+* consists of a distinguished node known as root and remaining nodes are partition into two disjoint sets T1 and T2 and both of then are binary tree. T1 is called left subtree and T2 is called right subtree.
+
+| General Tree | Binary Tree |
+| ------------ | ----------- |
+| A general tree is a data structure in that each node can have infinite number of children. | A Binary tree is a data structure in that each node has at most two nodes left and right.|
+| A General tree can’t be empty. | 	A Binary tree can be empty. |
+| There is no limit on the degree of node in a general tree. | Nodes in a binary tree cannot have more than degree 2. |
+| Subtree of general tree are not ordered. | Subtree of binary tree are ordered. |
+| In general tree, root have in-degree 0 and maximum out-degree n. | In binary tree, root have in-degree 0 and maximum out-degree 2. |
+| In general tree, each node have in-degree one and maximum out-degree n. | In binary tree, each node have in-degree one and maximum out-degree 2. |
+
+Binary tree can be represented in two ways.
+
+* Sequential Representation
+* Linked Representation
+
+**Binary Search Trees**
+
+Coming Soon...
+
 ## Algorithms
 
 An algorithm is an unambiguous specification of how to solve a class of problems.
