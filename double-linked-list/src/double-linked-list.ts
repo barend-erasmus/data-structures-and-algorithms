@@ -23,7 +23,7 @@ export class DoubleLinkedList<T> {
 
     public insertAtEnd(node: Node<T>): void {
 
-        if (this.start === null) {
+        if (!this.start) {
             this.start = node;
             return;
         }
@@ -45,7 +45,7 @@ export class DoubleLinkedList<T> {
         current.nextlink = null;
         current.previouslink = next;
 
-        while (next != null) {
+        while (next) {
             next.previouslink = next.nextlink;
             next.nextlink = current;
             current = next;
@@ -58,7 +58,7 @@ export class DoubleLinkedList<T> {
     public traverse(fn: (node: Node<T>) => void): void {
         let current: Node<T> = this.start;
 
-        while (current != null) {
+        while (current) {
             fn(current);
             current = current.nextlink;
         }

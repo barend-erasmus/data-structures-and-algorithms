@@ -23,6 +23,7 @@ async function run() {
         'factorial': 'Factorial',
         'fibonacci-series': 'Fibonacci Series',
         'find-nth-power': 'Find nth power',
+        'hash-table': 'Hash Table',
         'print-a-decimal-number-in-binary-form': 'Print a decimal number in binary form',
         'single-linked-list': 'Single Linked List',
         'tower-of-hanoi': 'Tower of Hanoi',

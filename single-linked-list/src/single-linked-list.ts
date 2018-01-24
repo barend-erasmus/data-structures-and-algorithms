@@ -13,7 +13,7 @@ export class SingleLinkedList<T> {
         let count: number = 0;
         let current: Node<T> = this.start;
 
-        while (current != null) {
+        while (current) {
             count++;
             current = current.link;
         }
@@ -60,14 +60,14 @@ export class SingleLinkedList<T> {
 
     public findCycleUsingHareAndTortoise(): boolean {
 
-        if (this.start === null || this.start.link === null) {
+        if (!this.start || !this.start.link) {
             return false;
         }
 
         let slow: Node<T> = this.start;
         let fast: Node<T> = this.start;
 
-        while (fast !== null && fast.link != null) {
+        while (fast && fast.link) {
             slow = slow.link;
             fast = fast.link.link;
 
@@ -82,7 +82,7 @@ export class SingleLinkedList<T> {
     public insertAfterIndex(node: Node<T>, index: number): void {
         let current: Node<T> = this.start;
 
-        for (let i = 0; i < index && current != null; i++) {
+        for (let i = 0; i < index && current; i++) {
             current = current.link;
         }
 
@@ -96,14 +96,14 @@ export class SingleLinkedList<T> {
     }
 
     public insertAtEnd(node: Node<T>): void {
-        if (this.start === null) {
+        if (!this.start) {
             this.start = node;
             return;
         }
 
         let current: Node<T> = this.start;
 
-        while (current.link != null) {
+        while (current.link) {
             current = current.link;
         }
 
@@ -113,7 +113,7 @@ export class SingleLinkedList<T> {
     public insertBeforeIndex(node: Node<T>, index: number): void {
         let current: Node<T> = this.start;
 
-        for (let i = 0; i < index - 1 && current != null; i++) {
+        for (let i = 0; i < index - 1 && current; i++) {
             current = current.link;
         }
 
@@ -125,7 +125,7 @@ export class SingleLinkedList<T> {
 
         let current: Node<T> = this.start;
 
-        while (current.link != null) {
+        while (current.link) {
             current = current.link;
         }
 
@@ -135,7 +135,7 @@ export class SingleLinkedList<T> {
     public nodeAtIndex(index: number): Node<T> {
         let current: Node<T> = this.start;
 
-        for (let i = 0; i < index && current != null; i++) {
+        for (let i = 0; i < index && current; i++) {
             current = current.link;
         }
 
@@ -145,7 +145,7 @@ export class SingleLinkedList<T> {
     public nodeWithValue(x: T): Node<T> {
         let current: Node<T> = this.start;
 
-        while (current != null) {
+        while (current) {
 
             if (current.info === x) {
                 return current;
@@ -223,7 +223,7 @@ export class SingleLinkedList<T> {
     public traverse(fn: (node: Node<T>) => void): void {
         let current: Node<T> = this.start;
 
-        while (current != null) {
+        while (current) {
             fn(current);
             current = current.link;
         }
