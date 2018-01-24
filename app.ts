@@ -17,6 +17,7 @@ async function run() {
 
     const programs: {} = {
         'binary-tree': 'Binary tree',
+        'bubble-sort': 'Bubble Sort',
         'checking-validity-of-an-expression-containing-nested-parentheses': 'Checking validity of an expression containing nested parentheses',
         'double-linked-list': 'Double Linked List',
         'euclids-algorithm-to-find-gcd': 'Euclid\'s algorithm to find GCD',
@@ -25,6 +26,7 @@ async function run() {
         'find-nth-power': 'Find nth power',
         'hash-table': 'Hash Table',
         'print-a-decimal-number-in-binary-form': 'Print a decimal number in binary form',
+        'selection-sort': 'Selection Sort',
         'single-linked-list': 'Single Linked List',
         'tower-of-hanoi': 'Tower of Hanoi',
     };

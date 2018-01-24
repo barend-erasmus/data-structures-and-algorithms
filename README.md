@@ -81,9 +81,13 @@ Binary tree can be represented in two ways.
 * Sequential Representation
 * Linked Representation
 
-**Binary Search Trees**
+**Heap**
 
-Coming Soon...
+A heap is a binary tree with these properties:
+
+* All levels have maximum number of nodes except possibly the last.
+* In the last level, all the nodes are to the left.
+* Key in any node N is greater than or equal to the keys in both children of N.
 
 ## Algorithms
 
@@ -276,3 +280,26 @@ In a tail recursive method, there is nothing to be done in the unwinding phase.
 | There is a terminating condition and the loop proceeds in such a way that this condition becomes false at some point. | Recursive functions proceeds in such a way that we finally reach the base case. |
 | No such time or memory overhead. | Pushing and poppoing activation records. |
 | Iterative algorithms are harder to implement. | Simplify the code and make it compact. |
+
+## Sorting
+
+### In-place Sort
+
+Sorting methods that are in-place:
+
+* No need of any extra storage.
+* Might need constant number of variables - independent of the size of data.
+* Examples: Selection Sort, Bubble Sort, Insertion Sort, Shell Short.
+
+Sorting methods that are not in-place.
+
+* Need extra storage to store intermediate results for the sorting.
+* Extra storage is proportional to the size of data.
+* Examples: Merge Sort.
+
+### Sort Stability
+
+Stable Sort:
+
+* Preserves the relative order of the duplicate keys in the sorted output.
+* Used to sort records sorted on one key and then on another.
